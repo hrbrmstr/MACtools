@@ -4,11 +4,29 @@ output: rmarkdown::github_document
 
 # MACtools
 
+Tools to Work with Media Access Control ('MAC') Addresses
+
 ## Description
+
+A media access control address (MAC address) of a device is a unique identifier assigned to a network interface controller (NIC) for communications at the data link layer of a network segment. MAC addresses are used as a network address for most IEEE 802 network technologies, including Ethernet and Wi-Fi. In this context, MAC addresses are used in the medium access control protocol sublayer. Tools are provided to work with these 'MAC' addresses.
+
+Ref: <https://github.com/hdm/mac-ages>
 
 ## What's Inside The Tin
 
 The following functions are implemented:
+
+- `mac_match_age`:	Lookup ages of MAC addresses
+- `mac_match_registry`:	Lookup registry metadata of MAC addresses
+- `mac_to_binary_string`:	Convert MAC address character vector to a binary string representation
+- `rebuild_search_tries`:	Rebuild in-memory search tries
+- `update_mac_age_db`:	Update MAC Address Age Database
+- `update_registry_data`:	Update registry data
+
+The following datasets are included:
+
+- `mac_age_db`:	MAC Age Database
+- `mac_registry_data`:	MAC Registry Data
 
 ## Installation
 
@@ -24,9 +42,24 @@ options(width=120)
 
 ```{r message=FALSE, warning=FALSE, error=FALSE}
 library(MACtools)
+library(tidyverse)
 
 # current verison
 packageVersion("MACtools")
 
 ```
 
+### Give it a go
+
+```{r}
+c(
+  "2e:ab:a4:38:20:69", "70:26:5:19:23:25", "b8:e8:56:35:36:4", 
+  "f4:f5:d8:df:67:44", "44:d9:e7:7a:9e:25", "f4:f5:d8:a7:94:66", 
+  "a4:77:33:f2:50:30", "0:3e:e1:c3:9d:7a", "f0:23:b9:eb:42:4", 
+  "c8:69:cd:28:5a:7d", "d4:85:64:74:49:de", "3c:7:54:52:fe:11"
+) -> macs
+
+mac_match_age(macs)
+
+mac_match_registry(macs)
+```

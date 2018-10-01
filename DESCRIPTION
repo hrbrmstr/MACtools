@@ -1,6 +1,6 @@
 Package: MACtools
 Type: Package
-Title: MACtools title goes here otherwise CRAN checks fail
+Title: Tools to Work with Media Access Control ('MAC') Addresses
 Version: 0.1.0
 Date: 2018-10-01
 Authors@R: c(
@@ -8,7 +8,12 @@ Authors@R: c(
            comment = c(ORCID = "0000-0001-5670-2640"))
   )
 Maintainer: Bob Rudis <bob@rud.is>
-Description: A good description goes here otherwise CRAN checks fail.
+Description: A media access control address ('MAC' address) of a device is a unique 
+   identifier assigned to a network interface controller ('NIC') for communications at 
+   the data link layer of a network segment. 'MAC' addresses are used as a network 
+   address for most 'IEEE' 802 network technologies, including 'Ethernet' and 'Wi-Fi'. In 
+   this context, 'MAC' addresses are used in the medium access control protocol sublayer.
+   Tools are provided to work with these 'MAC' addresses.
 URL: https://gitlab.com/hrbrmstr/MACtools
 BugReports: https://gitlab.com/hrbrmstr/MACtools/issues
 Encoding: UTF-8
@@ -19,6 +24,7 @@ Suggests:
 Depends:
     R (>= 3.2.0)
 Imports:
-    httr,
-    jsonlite
+    triebeard,
+    stringi,
+    readr
 RoxygenNote: 6.0.1.9000
