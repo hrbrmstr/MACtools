@@ -16,4 +16,6 @@
 #' @author Bob Rudis (bob@@rud.is)
 #' @import triebeard stringi
 #' @importFrom readr read_csv cols col_date col_character
+#' @useDynLib MACtools
+#' @importFrom Rcpp sourceCpp
 NULL

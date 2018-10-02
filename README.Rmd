@@ -16,6 +16,9 @@ Ref: <https://github.com/hdm/mac-ages>
 
 The following functions are implemented:
 
+- `as_raw_mac`:	Convert a charactrer vector of MAC addresses to a 'list' of 'raw' vectors.
+- `canonicalize_mac`:	Converts a character vector of MAC addresses into canonical form
+- `is_canonical_mac`:	Test if MAC address strings are in canonical form
 - `mac_match_age`:	Lookup ages of MAC addresses
 - `mac_match_registry`:	Lookup registry metadata of MAC addresses
 - `mac_to_binary_string`:	Convert MAC address character vector to a binary string representation
@@ -62,4 +65,10 @@ c(
 mac_match_age(macs)
 
 mac_match_registry(macs)
+
+is_canonical_mac(macs)
+
+canonicalize_mac(macs)
+
+as_raw_mac(canonicalize_mac(macs))
 ```

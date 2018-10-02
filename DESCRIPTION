@@ -16,6 +16,7 @@ Description: A media access control address ('MAC' address) of a device is a uni
    Tools are provided to work with these 'MAC' addresses.
 URL: https://gitlab.com/hrbrmstr/MACtools
 BugReports: https://gitlab.com/hrbrmstr/MACtools/issues
+SystemRequirements: C++11
 Encoding: UTF-8
 License: AGPL
 Suggests:
@@ -26,5 +27,7 @@ Depends:
 Imports:
     triebeard,
     stringi,
-    readr
+    readr,
+    Rcpp
 RoxygenNote: 6.0.1.9000
+LinkingTo: Rcpp

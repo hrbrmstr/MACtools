@@ -19,6 +19,12 @@ Ref: <https://github.com/hdm/mac-ages>
 
 The following functions are implemented:
 
+  - `as_raw_mac`: Convert a charactrer vector of MAC addresses to a
+    ‘list’ of ‘raw’ vectors.
+  - `canonicalize_mac`: Converts a character vector of MAC addresses
+    into canonical form
+  - `is_canonical_mac`: Test if MAC address strings are in canonical
+    form
   - `mac_match_age`: Lookup ages of MAC addresses
   - `mac_match_registry`: Lookup registry metadata of MAC addresses
   - `mac_to_binary_string`: Convert MAC address character vector to a
@@ -99,3 +105,57 @@ mac_match_registry(macs)
     ## 10 c8:69:cd:28:5a:7d MA-L     c869cd     Apple, Inc.               1 Infinite Loop Cupertino CA US 95014              
     ## 11 d4:85:64:74:49:de MA-L     d48564     Hewlett Packard           11445 Compaq Center Drive Houston  US 77070        
     ## 12 3c:7:54:52:fe:11  MA-L     3c0754     Apple, Inc.               1 Infinite Loop Cupertino CA US 95014
+
+``` r
+is_canonical_mac(macs)
+```
+
+    ##  [1]  TRUE FALSE FALSE  TRUE  TRUE  TRUE  TRUE FALSE FALSE  TRUE  TRUE FALSE
+
+``` r
+canonicalize_mac(macs)
+```
+
+    ##  [1] "2e:ab:a4:38:20:69" "70:26:05:19:23:25" "b8:e8:56:35:36:04" "f4:f5:d8:df:67:44" "44:d9:e7:7a:9e:25"
+    ##  [6] "f4:f5:d8:a7:94:66" "a4:77:33:f2:50:30" "00:3e:e1:c3:9d:7a" "f0:23:b9:eb:42:04" "c8:69:cd:28:5a:7d"
+    ## [11] "d4:85:64:74:49:de" "3c:07:54:52:fe:11"
+
+``` r
+as_raw_mac(canonicalize_mac(macs))
+```
+
+    ## [[1]]
+    ## [1] 2e ab a4 38 20 69
+    ## 
+    ## [[2]]
+    ## [1] 70 26 05 19 23 25
+    ## 
+    ## [[3]]
+    ## [1] b8 e8 56 35 36 04
+    ## 
+    ## [[4]]
+    ## [1] f4 f5 d8 df 67 44
+    ## 
+    ## [[5]]
+    ## [1] 44 d9 e7 7a 9e 25
+    ## 
+    ## [[6]]
+    ## [1] f4 f5 d8 a7 94 66
+    ## 
+    ## [[7]]
+    ## [1] a4 77 33 f2 50 30
+    ## 
+    ## [[8]]
+    ## [1] 00 3e e1 c3 9d 7a
+    ## 
+    ## [[9]]
+    ## [1] f0 23 b9 eb 42 04
+    ## 
+    ## [[10]]
+    ## [1] c8 69 cd 28 5a 7d
+    ## 
+    ## [[11]]
+    ## [1] d4 85 64 74 49 de
+    ## 
+    ## [[12]]
+    ## [1] 3c 07 54 52 fe 11
