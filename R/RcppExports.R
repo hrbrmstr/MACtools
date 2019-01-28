@@ -38,7 +38,7 @@ as_raw_mac <- function(mac) {
 #' @param mac character vector of MAC address strings
 #' @export
 #' @examples
-#' canonicalize_mac("c8:69:cd:28:5a:7d")
+#' canonicalize_mac("b8:e8:56:35:36:4")
 canonicalize_mac <- function(mac) {
     .Call('_MACtools_canonicalize_mac', PACKAGE = 'MACtools', mac)
 }

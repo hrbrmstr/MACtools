@@ -15,5 +15,5 @@ octets separated by colons. This function returns \code{TRUE} if
 an address string is in canonical format.
 }
 \examples{
-canonicalize_mac("c8:69:cd:28:5a:7d")
+canonicalize_mac("b8:e8:56:35:36:4")
 }

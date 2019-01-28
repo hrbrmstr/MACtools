@@ -24,8 +24,8 @@ set_names(
 #' @export
 rebuild_search_tries <- function() {
 
-  data("mac_age_db", envir = .pkgenv)
-  data("mac_registry_data", envir = .pkgenv)
+  data("mac_age_db", envir = .pkgenv, package = "MACtools")
+  data("mac_registry_data", envir = .pkgenv, package = "MACtools")
 
   triebeard::trie(
     .pkgenv$mac_age_db$to_match,
